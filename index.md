@@ -13,6 +13,10 @@ CSF预约购买合约地址（只收BNB）
 ```bash
 0xe34212e1741Ba7A600E1C566495373AD7648c0bf
 ```
+##### 视频教程（点击链接观看）
+###### Ave创建钱包：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Create_Wallet.mp4?Expires=1745159737&OSSAccessKeyId=TMP.3KrCy2XPJk6XhzPL2Q4p4TPUDwotHrLQEBTK4GaQG6LChdz6ZywiAfpvKiABj8hAjpnSJDLmAhd5bWH1K6nJ2Pf23bLQgB&Signature=Wx3e6KM8XLBifm9S0e686D%2BtUTk%3D">点击这里观看教程</a>
+
+
 ##### 官方邮箱：<a target="_blank" href="mailto:EqualDefi@gmail.com">EqualDefi@gmail.com</a>
 ##### 官方推特：<a target="_blank" href="https://x.com/EqualDefi">https://x.com/EqualDefi</a>
 ##### 官方电报：<a target="_blank" href="https://t.me/EqualDefi_Chinese">https://t.me/EqualDefi_Chinese</a>
