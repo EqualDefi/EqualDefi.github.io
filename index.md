@@ -13,6 +13,6 @@ CSF预约购买合约地址（只收BNB）
 ```bash
 0xe34212e1741Ba7A600E1C566495373AD7648c0bf
 ```
-##### 官方邮箱：[EqualDefi@gmail.com](EqualDefi@gmail.com)
+##### 官方邮箱：[EqualDefi@gmail.com](mailto:EqualDefi@gmail.com)
 ##### 官方推特：[https://x.com/EqualDefi](https://x.com/EqualDefi)
 ##### 官方电报：[https://t.me/EqualDefi_Chinese](https://t.me/EqualDefi_Chinese)
