@@ -1,5 +1,5 @@
-##### Ave官方下载链接：[https://m.aveios.com](https://m.aveios.com/)
-##### TokenPocket官方下载链接：[https://www.tp.xyz](https://www.tp.xyz/)
+##### Ave官方下载链接：<a target="_blank" href="https://m.aveios.com">https://m.aveios.com</a>
+##### TokenPocket官方下载链接：<a target="_blank" href="https://www.tp.xyz/">https://www.tp.xyz</a>
 
 CSF （购买资产）合约地址
 ```bash
@@ -13,7 +13,7 @@ CSF预约购买合约地址（只收BNB）
 ```bash
 0xe34212e1741Ba7A600E1C566495373AD7648c0bf
 ```
-##### 官方邮箱：[EqualDefi@gmail.com](mailto:EqualDefi@gmail.com)
-##### 官方推特：[https://x.com/EqualDefi](https://x.com/EqualDefi)
-##### 官方电报：[https://t.me/EqualDefi_Chinese](https://t.me/EqualDefi_Chinese)
-##### 官方DeBox：[https://m.debox.pro](https://m.debox.pro/group?id=660vqhfo&code=32wflxk6)
+##### 官方邮箱：<a target="_blank" href="mailto:EqualDefi@gmail.com">EqualDefi@gmail.com</a>
+##### 官方推特：<a target="_blank" href="https://x.com/EqualDefi">https://x.com/EqualDefi</a>
+##### 官方电报：<a target="_blank" href="https://t.me/EqualDefi_Chinese">https://t.me/EqualDefi_Chinese</a>
+##### 官方DeBox：<a target="_blank" href="https://m.debox.pro/group?id=660vqhfo&code=32wflxk6">https://m.debox.pro</a>
