@@ -1,15 +1,15 @@
 ##### Ave官方下载链接：<a target="_blank" href="https://m.aveios.com">https://m.aveios.com</a>
 ##### TokenPocket官方下载链接：<a target="_blank" href="https://www.tp.xyz/">https://www.tp.xyz</a>
 
-CSF （购买资产）合约地址
+CSF （购买资产）合约地址 — 长按复制
 ```bash
 0xaF6bD7085836FCd843884aD0c292C09Fe17D72B6
 ```
-CF（绑定关系）合约地址
+CF（绑定关系）合约地址 — 长按复制
 ```bash
 0x0927CC7cd7852Dd47341cCA6e578bB194d8BF08B
 ```
-CSF预约购买合约地址（只收BNB）
+CSF预约购买合约地址（只收BNB）— 长按复制
 ```bash
 0xe34212e1741Ba7A600E1C566495373AD7648c0bf
 ```
