@@ -15,8 +15,8 @@ CSF预约购买合约地址（只收BNB）
 ```
 ##### 视频教程（点击链接观看）
 ###### Ave创建钱包：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Create_Wallet.mp4">点击这里观看教程</a>
-###### Ave添加代币：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Adds_Tokens">点击这里观看教程</a>
-###### Ave预约排队：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Appointment_Queue">点击这里观看教程</a>
+###### Ave添加代币：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Adds_Tokens.mp4">点击这里观看教程</a>
+###### Ave预约排队：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Appointment_Queue.mp4">点击这里观看教程</a>
 ###### Ave购买代币：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Purchase.mp4">点击这里观看教程</a>
 ###### TokenPocket创建钱包：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Create_Wallet.mp4">点击这里观看教程</a>
 ###### TokenPocket购买代币：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Purchase.mp4">点击这里观看教程</a>
