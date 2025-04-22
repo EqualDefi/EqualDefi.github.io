@@ -31,4 +31,5 @@
 ##### 官方DeBox：<a target="_blank" href="https://m.debox.pro/group?id=660vqhfo&code=32wflxk6">https://m.debox.pro</a>
 
 ### 会议摘要
-##### CSF的底层逻辑与交易机制：<a target="_blank" href="https://meeting.tencent.com/crm/Kwd81m3k96">点击观看</a>
+##### CSF的底层逻辑与交易机制：<a target="_blank" href="https://meeting.tencent.com/crm/Kwd81m3k96">点击这里观看</a>
+
