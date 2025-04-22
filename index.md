@@ -1,3 +1,5 @@
+<head><link rel="shortcut icon" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/img/EqualDefi_logo.png"type="image/x-icon" /></head>
+
 ###### 注意：所有蓝色字体均可点击打开链接跳转，需使用浏览器打开该页面
 
 # 常用下载链接
