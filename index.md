@@ -1,8 +1,11 @@
-### 常用下载链接
-##### Ave官方下载链接：<a target="_blank" href="https://m.aveios.com">https://m.aveios.com</a>
+###### 注意：所有蓝色字体均可点击打开链接跳转，需使用手机自带浏览器打开该页面
+
+# 常用下载链接
+
+##### Ave官方下载链接：<a target="_blank" href="https://aveios.com/download">https://aveios.com</a>
 ##### TokenPocket官方下载链接：<a target="_blank" href="https://www.tp.xyz/">https://www.tp.xyz</a>
 
-### 常用合约地址
+### 常用合约地址 
 ##### CSF合约地址（购买资产）~  长按复制
 ```bash
 0xaF6bD7085836FCd843884aD0c292C09Fe17D72B6
