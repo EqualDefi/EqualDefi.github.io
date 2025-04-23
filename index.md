@@ -3,7 +3,7 @@
 # 常用下载链接
 
 ##### Ave官方下载链接：<a target="_blank" href="https://aveios.com/download">https://aveios.com</a>
-###### 如使用TokenPocket进入Ave长按复制下方链接:
+###### 如需使用TokenPocket进入Ave长按复制下方链接:
 ```bash
 https://m.aveios.com
 ```
