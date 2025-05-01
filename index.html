@@ -1,49 +1,105 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EqualDefi</title>
-    <meta name="generator" content="Jekyll v3.10.0" />
-    <meta property="og:title" content="EqualDefi" />
-    <meta property="og:locale" content="en_US" />
-    <link rel="canonical" href="https://equaldefi.github.io/" />
-    <meta property="og:url" content="https://equaldefi.github.io/" />
-    <meta property="og:site_name" content="EqualDefi" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:title" content="EqualDefi" />
-    <script type="application/ld+json">
-        {"@context":"https://schema.org","@type":"WebSite","headline":"EqualDefi","name":"EqualDefi","url":"https://equaldefi.github.io/"}
-    </script>
-    <!-- End Jekyll SEO tag -->
-
-    <link rel="stylesheet" href="https://equaldefi.github.io/assets/css/style.css?v=e81235e940f79632b301153459150503ca3266a2">
-    <link rel="shortcut icon" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/img/EqualDefi_logo.png" type="image/x-icon">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
-
-    <!-- Setup Google Analytics -->
-
-    <!-- You can set your favicon here -->
-    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
-
-    <!-- end custom head snippets -->
     <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #28333e, #222f3d, #1b3948);
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container-lg {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(166, 44, 44, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(50, 58, 169, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(141, 78, 78, 0.18);
+            padding: 25px;
+        }
+
+        h1 {
+            color: #00bfff;
+            text-align: center;
+            margin-bottom: 20px;
+            /* text-shadow: 0 0 10px rgba(14, 14, 14, 0.5); */
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+        }
+
+        h3 {
+            color: #00bfff;
+            border-bottom: 2px solid #00bfff;
+            padding-bottom: 8px;
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+
+        h5 {
+            margin: 12px 0;
+            font-size: 1rem;
+        }
+
+        a {
+            color: #00bfff;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: #00bfff;
+            transform: translateY(-3px);
+            text-decoration: underline;
+        }
+
         pre {
             position: relative;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 12px;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #00bfff;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
         }
+
+        pre:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
         .copy-button {
             position: absolute;
-            top: 5px;
-            right: 5px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
+            top: 6px;
+            right: 6px;
+            background-color: #00bfff;
+            border: none;
             padding: 5px 10px;
             cursor: pointer;
+            border-radius: 5px;
+            color: #333;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background-color: #00bfff;
         }
 
         /* 媒体查询，当屏幕宽度小于 600px 时调整复制按钮样式 */
@@ -51,22 +107,19 @@
             .copy-button {
                 position: static;
                 display: block;
-                margin-top: 5px;
+                margin-top: 10px;
                 width: 100%;
             }
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container-lg px-3 my-5 markdown-body">
-
         <h1><a href="https://equaldefi.github.io/">EqualDefi</a></h1>
-
         <h6 id="注意所有蓝色字体均可点击打开链接跳转需使用浏览器打开该页面">注意：所有蓝色字体均可点击打开链接跳转，需使用浏览器打开该页面。</h6>
-
-        <h1 id="常用下载链接">常用下载链接</h1>
-
+        <h3 id="常用下载链接">常用下载链接</h3>
         <h5 id="ave官方下载链接httpsaveioscom">Ave官方下载链接：<a target="_blank" href="https://aveios.com/download">https://aveios.com</a></h5>
         <h5 id="tokenpocket官方下载链接httpswwwtpxyz">TokenPocket官方下载链接：<a target="_blank" href="https://www.tp.xyz/">https://www.tp.xyz</a></h5>
         <h6 id="如需使用tokenpocket进入ave长按复制下方链接">如需使用TokenPocket进入Ave复制下方链接:</h6>
@@ -75,7 +128,6 @@
                 <pre class="highlight"><code>https://aveios.com/token/0xaf6bd7085836fcd843884ad0c292c09fe17d72b6-bsc</code></pre>
             </div>
         </div>
-
         <h3 id="常用合约地址">常用合约地址</h3>
         <h5 id="csf合约地址购买资产">CSF合约地址（购买资产）</h5>
         <div class="language-bash highlighter-rouge">
@@ -101,30 +153,26 @@
         <h5 id="ave预约排队点击这里观看教程">Ave预约排队：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Appointment_Queue.mp4">点击这里观看教程</a></h5>
         <h5 id="ave购买代币点击这里观看教程">Ave购买代币：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Purchase.mp4">点击这里观看教程</a></h5>
         <h5 id="tokenpocket创建钱包点击这里观看教程">TokenPocket创建钱包：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Create_Wallet.mp4">点击这里观看教程</a></h5>
-        <h5 id="tokenpocket购买代币点击这里观看教程">TokenPocket购买代币：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Purchase.mp4">点击这里观看教程</a></h5>
         <h5 id="tokenpocket预约排队点击这里观看教程">TokenPocket预约排队：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Appointment_Queue.mp4">点击这里观看教程</a></h5>
-
+        <h5 id="tokenpocket购买代币点击这里观看教程">TokenPocket购买代币：<a target="_blank" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Purchase.mp4">点击这里观看教程</a></h5>
         <h3 id="社交平台">社交平台</h3>
         <h5 id="官方邮箱equaldefigmailcom">官方邮箱：<a target="_blank" href="mailto:EqualDefi@gmail.com">EqualDefi@gmail.com</a></h5>
         <h5 id="官方推特httpsxcomequaldefi">官方推特：<a target="_blank" href="https://x.com/EqualDefi">https://x.com/EqualDefi</a></h5>
         <h5 id="官方电报httpstmeequaldefi_chinese">官方电报：<a target="_blank" href="https://t.me/EqualDefi_Chinese">https://t.me/EqualDefi_Chinese</a></h5>
         <h5 id="官方deboxhttpsmdeboxpro">官方DeBox：<a target="_blank" href="https://m.debox.pro/group?id=660vqhfo&code=32wflxk6">https://m.debox.pro</a></h5>
-
         <h3 id="会议摘要">会议摘要</h3>
         <h5 id="csf行动破局">CSF行动破局：<a target="_blank" href="https://meeting.tencent.com/cw/2MkAvWBM85">点击这里观看</a></h5>
         <h5 id="csf开启defi财富新机遇">CSF开启Defi财富新机遇：<a target="_blank" href="https://meeting.tencent.com/crm/N8X9yJ7408">点击这里观看</a></h5>
-
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const preElements = document.querySelectorAll('pre');
             preElements.forEach(pre => {
                 const copyButton = document.createElement('button');
                 copyButton.textContent = '复制';
                 copyButton.classList.add('copy-button');
-                copyButton.addEventListener('click', function() {
+                copyButton.addEventListener('click', function () {
                     const code = pre.querySelector('code').textContent;
                     navigator.clipboard.writeText(code).then(() => {
                         copyButton.textContent = '已复制';
