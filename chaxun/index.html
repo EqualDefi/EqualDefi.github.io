@@ -8,8 +8,8 @@
   <meta name="Keywords" content="">
   <meta name="Description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/img/EqualDefi_logo.png" />
-  <title>预约通道查询</title>
+  <link rel="icon" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/img/csf_logo.png" />
+  <title>CSF预约业绩查询</title>
   <meta name="keywords" content="">
   <meta name="description" content="">
   <style>
@@ -49,10 +49,13 @@
       padding: 0;
       font-weight: 300
     }
+
     body {
       overflow-y: auto;
-      margin: 0; /* 移除默认边距 */
-      height: 100vh; /* 设置高度为视口高度 */
+      margin: 0;
+      /* 移除默认边距 */
+      height: 100vh;
+      /* 设置高度为视口高度 */
     }
 
     body,
@@ -85,8 +88,10 @@
       background: linear-gradient(to bottom right, #01a982 0, #00bfff 100%);
       overflow: visible;
       min-height: 100vh;
-      width: 100%; /* 确保宽度为 100% */
-      height: 100%; /* 确保高度为 100% */
+      width: 100%;
+      /* 确保宽度为 100% */
+      height: 100%;
+      /* 确保高度为 100% */
     }
 
     .wrapper {
@@ -94,6 +99,7 @@
       width: 100%;
       height: 100%
     }
+
     .bg-bubbles {
       position: fixed;
       left: 0;
@@ -225,9 +231,11 @@
 
     .content {
       margin: 0 auto;
-      width: 28%;
+      width: 90%;
+      max-width: 1400px;
       background: #fff;
-      border-radius: 5px
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
     p.footer {
@@ -267,13 +275,45 @@
       margin-top: 15px
     }
 
+    .content-top ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      padding: 0;
+      list-style: none;
+    }
+
     .content-top ul li {
-      display: block;
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.2em;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       font-size: 15px;
-      color: #000;
-      line-height: 1.8em;
-      padding: 1em 0 1em 1em;
-      border-bottom: 1px solid #e2e0de
+      color: #333;
+      line-height: 1.6;
+      transition: transform 0.2s ease;
+      border-bottom: none;
+    }
+
+    .content-top ul li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .content-top ul li:last-child {
+      grid-column: 1 / -1;
+      text-align: center;
+      background: transparent;
+      box-shadow: none;
+      padding: 2em 1em 1em;
+    }
+
+    display: block;
+    font-size: 15px;
+    color: #000;
+    line-height: 1.8em;
+    padding: 1em 0 1em 1em;
+    border-bottom: 1px solid #e2e0de
     }
 
     .content-top ul li a {
@@ -304,19 +344,19 @@
 
     @media (max-width:1366px) {
       .content {
-        width: 31%
+        width: 90%;
       }
     }
 
     @media (max-width:1280px) {
       .content {
-        width: 32%
+        width: 90%;
       }
     }
 
     @media (max-width:1080px) {
       .content {
-        width: 38%
+        width: 90%;
       }
 
       .main h1 {
@@ -408,6 +448,7 @@
       .content {
         width: 62%
       }
+
     }
 
     @media (max-width:568px) {
@@ -526,54 +567,119 @@
   <div id="all">
     <div class="wrapper">
       <div class="main">
-        <!-- <h1>地址发布页：联系QQ12345678</h1> -->
+        <h1>CSF预约业绩查询</h1>
         <div class="content">
           <div class="content-top">
-            <h2>预约通道业绩查询</h2>
+            <a href="https://bscscan.com/address/0x64843356F56BCF37B2eBFED8e0c7c898442e1411">
+              <h2>查询总业绩</h2>
+            </a><br>
             <ul>
               <li>
-                查询总业绩
-                <a href="https://bscscan.com/address/0x64843356F56BCF37B2eBFED8e0c7c898442e1411"><i>0x64843356F***0c7c898442e1411</i></a>
-              </li>
-              <li>
                 查询CSF1
-                <a href="https://bscscan.com/token/0xfAcADD2170d0218F19C60DdB0AAE155063b52714"><i>0xfAcADD2170d0***AE155063b52714</i></a>
+                <a
+                  href="https://bscscan.com/token/0xfAcADD2170d0218F19C60DdB0AAE155063b52714"><i>0xfAcADD2170***55063b52714</i></a>
               </li>
               <li>
                 查询CSF2
-                <a href="https://bscscan.com/token/0xAF1A9D1E76a023f48e52e6C3CB69f3b2F899B171"><i>0xAF1A9D1E76a***B69f3b2F899B171</i></a>
+                <a
+                  href="https://bscscan.com/token/0xAF1A9D1E76a023f48e52e6C3CB69f3b2F899B171"><i>0xAF1A9D1E76a***2F899B171</i></a>
               </li>
               <li>
                 查询CSF3
-                <a href="https://bscscan.com/token/0x3728BDe1485C878CDbF379e9c5FED1721e7A9571"><i>0x3728BDe148***5FED1721e7A9571</i></a>
+                <a
+                  href="https://bscscan.com/token/0x3728BDe1485C878CDbF379e9c5FED1721e7A9571"><i>0x3728BDe148***1721e7A9571</i></a>
               </li>
               <li>
                 查询CSF4
-                <a href="https://bscscan.com/token/0x883f947b0bA76D07EB9597e9504b9B7C6B07a6dB"><i>0x883f947b0bA7***b9B7C6B07a6dB</i></a>
+                <a
+                  href="https://bscscan.com/token/0x883f947b0bA76D07EB9597e9504b9B7C6B07a6dB"><i>0x883f947b0bA***7C6B07a6dB</i></a>
               </li>
               <li>
                 查询CSF5
-                <a href="https://bscscan.com/token/0xA8CE6D0e78E07C45cb3F1dAca4eC78893CF8303e"><i>0xA8CE6D0e78E07C4***893CF8303e</i></a>
+                <a
+                  href="https://bscscan.com/token/0xA8CE6D0e78E07C45cb3F1dAca4eC78893CF8303e"><i>0xA8CE6D0e78***893CF8303e</i></a>
               </li>
+
+
               <li>
                 查询CSF6
-                <a href="https://bscscan.com/token/0x2fB9707C9b9C3D2F2C607F6B35Ab6D5DE83a1283"><i>0x2fB9707C9b9C***b6D5DE83a1283</i></a>
+                <a
+                  href="https://bscscan.com/token/0x2fB9707C9b9C3D2F2C607F6B35Ab6D5DE83a1283"><i>0x2fB9707C9b**6D5DE83a1283</i></a>
               </li>
               <li>
                 查询CSF7
-                <a href="https://bscscan.com/token/0x6Ce978b673ffBeAAc7C0a9c554318004779CB0F9"><i>0x6Ce978b673ffB**18004779CB0F9</i></a>
+                <a
+                  href="https://bscscan.com/token/0x6Ce978b673ffBeAAc7C0a9c554318004779CB0F9"><i>0x6Ce978b673**18004779CB0F9</i></a>
               </li>
               <li>
                 查询CSF8
-                <a href="https://bscscan.com/token/0x0454ac445008A08a90D78712Db69077f1E316a44"><i>0x0454ac445008A***077f1E316a44</i></a>
+                <a
+                  href="https://bscscan.com/token/0x0454ac445008A08a90D78712Db69077f1E316a44"><i>0x0454ac445***077f1E316a44</i></a>
               </li>
               <li>
                 查询CSF9
-                <a href="https://bscscan.com/token/0x9D3cb4F87943cbC760F5C02F92f57E104f9fc3ED"><i>0x9D3cb4F87943**f57E104f9fc3ED</i></a>
+                <a
+                  href="https://bscscan.com/token/0x9D3cb4F87943cbC760F5C02F92f57E104f9fc3ED"><i>0x9D3cb4F87**f57E104f9fc3ED</i></a>
               </li>
               <li>
                 查询CSF10
-                <a href="https://bscscan.com/token/0xC77d4E8224b9B96605595CF8655A054944B570cE"><i>0xC77d4E8224***55A054944B570cE</i></a>
+                <a
+                  href="https://bscscan.com/token/0xC77d4E8224b9B96605595CF8655A054944B570cE"><i>0xC77d4E8224***054944B570cE</i></a>
+              </li>
+
+
+
+              <li>
+                查询CSF11
+                <a
+                  href="https://bscscan.com/token/0x5deCA094A4C0DE166E2bc39328b7827A7D5d53B2"><i>0x5deCA094A***7827A7D5d53B2</i></a>
+              </li>
+              <li>
+                查询CSF12
+                <a
+                  href="https://bscscan.com/token/0xC79b62b160d3B2D143630Ea33Bf338e5aEbf557f"><i>0xC79b62b1***Bf338e5aEbf557f</i></a>
+              </li>
+              <li>
+                查询CSF13
+                <a
+                  href="https://bscscan.com/token/0x20E4BbcABDd647d0B61E0F3650b70e99AcF07215"><i>0x20E4BbcAB***70e99AcF07215</i></a>
+              </li>
+              <li>
+                查询CSF14
+                <a
+                  href="https://bscscan.com/token/0xEEb7D59aBAb84591C5F140E8841aEc6958c9Af4f"><i>0xEEb7D59aBA***1aEc6958c9Af4f</i></a>
+              </li>
+              <li>
+                查询CSF15
+                <a
+                  href="https://bscscan.com/token/0x4E20B4E8131FaADd8D5e6b8374D9610Fe4Ee8923"><i>0x4E20B4E8131***10Fe4Ee8923</i></a>
+              </li>
+
+
+              <li>
+                查询CSF16
+                <a
+                  href="https://bscscan.com/token/0x9eCcC804C013dA590207521951cf1521a795F44F"><i>0x9eCcC804C0***cf1521a795F44F</i></a>
+              </li>
+              <li>
+                查询CSF17
+                <a
+                  href="https://bscscan.com/token/0x69b0F61a39De7A307186f83578B8295CA4fC2896"><i>0x69b0F61a39***8295CA4fC2896</i></a>
+              </li>
+              <li>
+                查询CSF18
+                <a
+                  href="https://bscscan.com/token/0xc9602E2A6d5CFa6297c00f3a12a6b7244b1e9072"><i>0xc9602E2A6d***b7244b1e9072</i></a>
+              </li>
+              <li>
+                查询CSF19
+                <a
+                  href="https://bscscan.com/token/0x56fFB09C0f48e568c5D3c72c84cafa4Ec1f08268"><i>0x56fFB09C0f4***fa4Ec1f08268</i></a>
+              </li>
+              <li>
+                查询CSF20
+                <a
+                  href="https://bscscan.com/token/0xaa5419F929a477E6055F34E2115f18a62e0ec453"><i>0xaa5419F929a***18a62e0ec453</i></a>
               </li>
 
 
