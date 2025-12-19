@@ -4,112 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EqualDefi</title>
+    <title>EqualDefi | 智能去中心化金融门户</title>
     <link rel="shortcut icon" href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/img/EqualDefi_logo.png"
         type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@800&display=swap" rel="stylesheet">
+    <!-- 引入 Google 字体与图标 -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        :root {
+            --primary: #2c80fe;
+            --primary-light: #e0f2fe;
+            --bg: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --glass: rgba(255, 255, 255, 0.8);
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f0f9ff, #e6f7ff, #f0f9ff);
-            color: #1e293b;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #e0f2fe 0%, #f8fafc 40%),
+                radial-gradient(circle at bottom left, #f0f9ff 0%, #f8fafc 40%);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            line-height: 1.6;
         }
 
-        .container-lg {
-            width: 90%;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(149, 157, 165, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(224, 242, 254, 0.8);
-            padding: 25px;
-        }
-
-        h1 {
-            color: #2c80fe;
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2.2rem;
-            transition: all 0.3s ease;
-        }
-
-        h3 {
-            color: #2c80fe;
-            border-bottom: 2px solid #2c80fe;
-            padding-bottom: 8px;
-            margin-top: 20px;
-            font-size: 1.5rem;
-        }
-
-        h5 {
-            font-size: 1rem;
-        }
-
-        h6 {
-            font-size: 0.9rem;
-        }
-
-        a {
-            color: #2c80fe;
-            text-decoration: none;
-            transition: color 0.3s ease, transform 0.3s ease;
-            display: inline-block;
-        }
-
-        a:hover {
-            color: #1a4c97;
-            transform: translateY(-3px);
-            text-decoration: underline;
-        }
-
-        pre {
-            position: relative;
-            background-color: rgba(248, 250, 252, 0.8);
-            padding: 12px;
-            border-radius: 8px;
-            overflow-x: auto;
-            color: #334155;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
-            border: 1px solid #e2e8f0;
-        }
-
-        .copy-button {
-            position: absolute;
-            top: 6px;
-            right: 6px;
-            background-color: #2c80fe;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .copy-button:hover {
-            background-color: #1e55a9;
-        }
-
-        @media (max-width: 600px) {
-            .copy-button {
-                position: static;
-                display: block;
-                margin-top: 10px;
-                width: 100%;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* 微信图片遮罩层样式 - 仅显示图片 */
+        /* 微信遮罩层优化 */
         .wechat-mask {
             display: none;
             position: fixed;
@@ -117,154 +42,401 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 9999;
-            /* 替换为您的图片URL */
-            background: url('https://equaldefi.oss-cn-hongkong.aliyuncs.com/img/wechat_tip.png') center center no-repeat;
-            /* 关键修改：让图片覆盖整个屏幕 */
-            background-size: cover;
-            /* 防止图片在小屏幕上重复显示 */
-            background-repeat: no-repeat;
+            z-index: 10000;
+            background: rgba(0, 0, 0, 0.85) url('https://equaldefi.oss-cn-hongkong.aliyuncs.com/img/wechat_tip.png') center 100px no-repeat;
+            background-size: 80% auto;
+            backdrop-filter: blur(8px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* Header 样式 */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-area img {
+            width: 120Px;
+            /* margin-bottom: 10px; */
+            filter: drop-shadow(0 4px 6px rgba(44, 128, 254, 0.2));
+        }
+
+        header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #2c80fe, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            padding: 10px 0;
+            /* 预留充足空间防止切边 */
+            line-height: 1.1;
+
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        /* 网格布局 (Bento Grid) */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(44, 128, 254, 0.15);
+            border-color: var(--primary);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* 合约地址特殊样式 */
+        .address-box {
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            position: relative;
+            border: 1px solid #e2e8f0;
+        }
+
+        .address-label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .address-value {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+            padding-right: 45px;
+            display: block;
+            color: var(--text-main);
+        }
+
+        .copy-btn {
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 6px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* 列表项样式 */
+        .link-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f5f9;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: color 0.2s;
+        }
+
+        .link-item:last-child {
+            border-bottom: none;
+        }
+
+        .link-item:hover {
+            color: var(--primary);
+        }
+
+        .link-item i {
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        .btn-primary {
+            display: block;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: opacity 0.2s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* 社交媒体栏 */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-item {
+            background: white;
+            padding: 15px;
+            border-radius: 18px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-muted);
+            border: 1px solid #f1f5f9;
+            transition: all 0.2s;
+        }
+
+        .social-item i {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .social-item:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* 底部信息 */
+        footer {
+            font-family: 'Space Grotesk', sans-serif;
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding-bottom: 40px;
         }
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
-        integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!-- 微信图片遮罩层 - 仅显示图片 -->
     <div class="wechat-mask" id="wechatMask"></div>
 
-    <div class="container-lg px-3 my-5 markdown-body">
-        <h1><a href="https://equaldefi.github.io/">EqualDefi</a></h1>
-        <h6 id="注意所有蓝色字体均可点击打开链接跳转需使用浏览器打开该页面">注意：所有蓝色字体均可点击打开链接跳转，需使用浏览器打开该页面。</h6>
+    <div class="container">
+        <header>
+            <div class="logo-area">
+                <img src="https://equaldefi.oss-cn-hongkong.aliyuncs.com/img/EqualDefi_logo.png" alt="EqualDefi Logo">
+            </div>
+            <h1>EqualDefi</h1>
+            <p><i class="fa-solid fa-circle-info"></i> 建议在系统浏览器中打开以获得完整体验</p>
+        </header>
 
-        <h3 id="常用链接">常用链接</h3>
-        <h5 id="ave官方下载链接httpsaveioscom">Ave官方下载链接：<a target="_blank"
-                href="https://aveios.com/download">https://aveios.com</a></h5>
-        <h5 id="tokenpocket官方下载链接httpswwwtpxyz">TokenPocket官方下载链接：<a target="_blank"
-                href="https://www.tp.xyz/">https://www.tp.xyz</a></h5>
+        <div class="bento-grid">
+            <!-- 常用下载 -->
+            <div class="card">
+                <div class="card-title"><i class="fa-solid fa-download"></i> 常用工具</div>
+                <a href="https://aveios.com/download" target="_blank" class="link-item">
+                    <span>Ave.ai 官方下载</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <a href="https://www.tp.xyz/" target="_blank" class="link-item">
+                    <span>TokenPocket 官方下载</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+                <div style="margin-top:15px">
+                    <span class="address-label">CSF 卖出清零链接</span>
+                    <div class="address-box">
+                        <span class="address-value">https://csf.equaldefi.com</span>
+                        <button class="copy-btn" onclick="copyText('https://csf.equaldefi.com', this)">复制</button>
+                    </div>
+                </div>
+            </div>
 
-        <h5>CSF卖出清零链接（专治卖不干净）</h5>
-        <div class="language-bash highlighter-rouge">
-            <div class="highlight">
-                <pre class="highlight"><code>https://csf.equaldefi.com</code></pre>
+            <!-- 合约地址 -->
+            <div class="card">
+                <div class="card-title"><i class="fa-solid fa-file-contract"></i>合约地址</div>
+                <div class="address-box">
+                    <span class="address-label">CF 合约 (绑定关系)</span>
+                    <span class="address-value">0x0927CC7cd7852Dd47341cCA6e578bB194d8BF08B</span>
+                    <button class="copy-btn"
+                        onclick="copyText('0x0927CC7cd7852Dd47341cCA6e578bB194d8BF08B', this)">复制</button>
+                </div>
+                <div class="address-box">
+                    <span class="address-label">CSF 合约 (购买资产)</span>
+                    <span class="address-value">0xaF6bD7085836FCd843884aD0c292C09Fe17D72B6</span>
+                    <button class="copy-btn"
+                        onclick="copyText('0xaF6bD7085836FCd843884aD0c292C09Fe17D72B6', this)">复制</button>
+                </div>
+            </div>
+
+            <!-- 视频教程 -->
+            <div class="card">
+                <div class="card-title"><i class="fa-solid fa-play-circle"></i> 操作指南</div>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/DeBox_Join.mp4" target="_blank"
+                    class="link-item">
+                    <span>DeBox 使用教程</span>
+                    <i class="fa-solid fa-video"></i>
+                </a>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Create_Wallet.mp4" target="_blank"
+                    class="link-item">
+                    <span>Ave 创建钱包</span>
+                    <i class="fa-solid fa-video"></i>
+                </a>
+                <!-- <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Adds_Tokens.mp4" target="_blank"
+                    class="link-item">
+                    <span>Ave 添加代币</span>
+                    <i class="fa-solid fa-video"></i>
+                </a> -->
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Appointment_Queue.mp4" target="_blank"
+                    class="link-item">
+                    <span>Ave 预约排队</span>
+                    <i class="fa-solid fa-video"></i>
+                </a>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Purchase.mp4" target="_blank"
+                    class="link-item">
+                    <span>Ave 购买代币</span>
+                    <i class="fa-solid fa-video"></i>
+                </a>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Create_Wallet.mp4" target="_blank"
+                    class="link-item">
+                    <span>TP 创建钱包</span>
+                    <i class="fa-solid fa-video"></i>
+                </a>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Appointment_Queue.mp4" target="_blank"
+                    class="link-item">
+                    <span>TP 预约排队</span>
+                    <i class="fa-solid fa-video"></i>
+                </a>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Purchase.mp4" target="_blank"
+                    class="link-item">
+                    <span>TP 购买代币</span>
+                    <i class="fa-solid fa-video"></i>
+                </a>
+            </div>
+
+            <!-- 线上商学院 -->
+            <div class="card">
+                <div class="card-title"><i class="fa-solid fa-graduation-cap"></i> 线上商学院</div>
+
+
+                <a href="https://meeting.tencent.com/cw/NQzdXArXc2" target="_blank" class="link-item">
+                    <span>CSF 逆势上涨，把握先机</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://meeting.tencent.com/cw/KPPdQ76Y30" target="_blank" class="link-item">
+                    <span>CSF 开启 Defi 财富新机遇</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://meeting.tencent.com/cw/ld4qe376ff" target="_blank" class="link-item">
+                    <span>CSF做时间的朋友</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://meeting.tencent.com/cw/l64zpwzZ68" target="_blank" class="link-item">
+                    <span>十二字方针助力CSF</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://meeting.tencent.com/cw/l59606V5a1" target="_blank" class="link-item">
+                    <span>穿越牛熊，尽在CSF</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://meeting.tencent.com/cw/NxbyVq51f8" target="_blank" class="link-item">
+                    <span>CSF创新底层架构促发展</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+                <a href="https://meeting.tencent.com/cw/2yn1yVdO26" target="_blank" class="link-item">
+                    <span>CSF 机制定乾坤，共识赢未来</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <!-- <a href="#" class="btn-primary" style="margin-top: 20px;">查看全部课程</a> -->
             </div>
         </div>
 
-        <h5 id="如需使用tokenpocket进入ave长按复制下方链接">如需使用TokenPocket进入Ave复制下方链接:</h5>
-        <div class="language-bash highlighter-rouge">
-            <div class="highlight">
-                <pre class="highlight"><code>https://ave.ai</code></pre>
-                <pre class="highlight"><code>https://aveios.com</code></pre>
-            </div>
+        <!-- 社交平台 -->
+        <div class="social-grid">
+            <a href="mailto:EqualDefi@gmail.com" class="social-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span>邮箱</span>
+            </a>
+            <a href="https://x.com/EqualDefi" target="_blank" class="social-item">
+                <i class="fa-brands fa-twitter"></i>
+                <span>推特</span>
+            </a>
+            <a href="https://t.me/EqualDefi_Chinese" target="_blank" class="social-item">
+                <i class="fa-brands fa-telegram"></i>
+                <span>电报</span>
+            </a>
+            <a href="https://m.debox.pro/group?id=660vqhfo&code=32wflxk6" target="_blank" class="social-item">
+                <i class="fa-solid fa-users"></i>
+                <span>DeBox</span>
+            </a>
         </div>
 
-
-        <h3 id="常用合约地址">常用合约地址</h3>
-        <h5>CF合约地址（绑定关系）</h5>
-        <div class="language-bash highlighter-rouge">
-            <div class="highlight">
-                <pre class="highlight"><code>0x0927CC7cd7852Dd47341cCA6e578bB194d8BF08B</code></pre>
-            </div>
-        </div>
-
-        <h5>CSF合约地址（购买资产）</h5>
-        <div class="language-bash highlighter-rouge">
-            <div class="highlight">
-                <pre class="highlight"><code>0xaF6bD7085836FCd843884aD0c292C09Fe17D72B6</code></pre>
-            </div>
-        </div>
-
-
-
-        <h3 id="视频点击链接观看">视频教程</h3>
-        <h5 id="DeBox使用">DeBox使用教程：<a target="_blank"
-                href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/DeBox_Join.mp4">点击观看教程</a></h5>
-        <h5 id="ave创建钱包点击观看">Ave创建钱包：<a target="_blank"
-                href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Create_Wallet.mp4">点击观看教程</a></h5>
-        <h5 id="ave添加代币点击观看">Ave添加代币：<a target="_blank"
-                href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Adds_Tokens.mp4">点击观看教程</a></h5>
-        <h5 id="ave预约排队点击观看">Ave预约排队：<a target="_blank"
-                href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Appointment_Queue.mp4">点击观看教程</a></h5>
-        <h5 id="ave购买代币点击观看">Ave购买代币：<a target="_blank"
-                href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Purchase.mp4">点击观看教程</a></h5>
-        <h5 id="tokenpocket创建钱包点击观看">TokenPocket创建钱包：<a target="_blank"
-                href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Create_Wallet.mp4">点击观看教程</a></h5>
-        <h5 id="tokenpocket预约排队点击观看">TokenPocket预约排队：<a target="_blank"
-                href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Appointment_Queue.mp4">点击观看教程</a></h5>
-        <h5 id="tokenpocket购买代币点击观看">TokenPocket购买代币：<a target="_blank"
-                href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Purchase.mp4">点击观看教程</a></h5>
-
-
-        <h3 id="社交平台">社交平台</h3>
-        <h5 id="官方邮箱equaldefigmailcom">官方邮箱：<a target="_blank" href="mailto:EqualDefi@gmail.com">EqualDefi@gmail.com</a>
-        </h5>
-        <h5 id="官方推特httpsxcomequaldefi">官方推特：<a target="_blank"
-                href="https://x.com/EqualDefi">https://x.com/EqualDefi</a></h5>
-        <h5 id="官方电报httpstmeequaldefi_chinese">官方电报：<a target="_blank"
-                href="https://t.me/EqualDefi_Chinese">https://t.me/EqualDefi_Chinese</a></h5>
-        <h5 id="官方deboxhttpsmdeboxpro">官方DeBox：<a target="_blank"
-                href="https://m.debox.pro/group?id=660vqhfo&code=32wflxk6">https://m.debox.pro</a></h5>
-
-
-        <h3 id="线上商学院">线上商学院</h3>
-        <h5>CSF逆势上涨，把握先机：<a target="_blank" href="https://meeting.tencent.com/cw/NQzdXArXc2">点击观看回放</a></h5>
-        <h5>CSF开启Defi财富新机遇：<a target="_blank" href="https://meeting.tencent.com/cw/KPPdQ76Y30">点击观看回放</a></h5>
-        <h5>CSF做时间的朋友：<a target="_blank" href="https://meeting.tencent.com/cw/ld4qe376ff">点击观看回放</a></h5>
-        <h5>十二字方针助力CSF：<a target="_blank" href="https://meeting.tencent.com/cw/l64zpwzZ68">点击观看回放</a></h5>
-        <h5>穿越牛熊，尽在CSF：<a target="_blank" href="https://meeting.tencent.com/cw/l59606V5a1">点击观看回放</a></h5>
-        <h5>CSF - 机制定乾坤，共识赢未来：<a target="_blank" href="https://meeting.tencent.com/cw/2yn1yVdO26">点击观看回放</a></h5>
-        <h5>CSF创新底层架构促发展：<a target="_blank" href="https://meeting.tencent.com/cw/NxbyVq51f8">点击观看回放</a></h5>
-
-
+        <footer>
+            <p>&copy; 2025 EqualDefi. All Rights Reserved.</p>
+        </footer>
     </div>
-    <script>anchors.add();</script>
+
     <script>
-        // 检测是否在微信浏览器中
-        function isWechatBrowser() {
-            const userAgent = navigator.userAgent.toLowerCase();
-            return userAgent.includes('micromessenger');
+        // 检测微信
+        function isWechat() {
+            return /MicroMessenger/i.test(navigator.userAgent);
         }
 
-        // 页面加载完成后检查
-        document.addEventListener('DOMContentLoaded', function () {
-            // 处理复制按钮
-            const preElements = document.querySelectorAll('pre');
-            preElements.forEach(pre => {
-                const copyButton = document.createElement('button');
-                copyButton.textContent = '复制';
-                copyButton.classList.add('copy-button');
-                copyButton.addEventListener('click', function () {
-                    const code = pre.querySelector('code').textContent;
-                    navigator.clipboard.writeText(code).then(() => {
-                        copyButton.textContent = '已复制';
-                        setTimeout(() => {
-                            copyButton.textContent = '复制';
-                        }, 2000);
-                    }).catch(err => {
-                        console.error('复制失败: ', err);
-                    });
-                });
-                pre.appendChild(copyButton);
+        if (isWechat()) {
+            document.getElementById('wechatMask').style.display = 'block';
+        }
+
+        // 复制功能优化
+        function copyText(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = '已复制';
+                btn.style.background = '#22c55e';
+                btn.style.color = 'white';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.style.background = 'white';
+                    btn.style.color = 'inherit';
+                }, 2000);
             });
-
-            // 显示微信遮罩层（仅图片）
-            if (isWechatBrowser()) {
-                document.getElementById('wechatMask').style.display = 'block';
-
-                // 防止用户通过点击或其他方式绕过遮罩层
-                document.getElementById('wechatMask').addEventListener('click', function (e) {
-                    e.stopPropagation();
-                });
-            }
-        });
-
-        // 防止用户通过键盘操作关闭遮罩
-        document.addEventListener('keydown', function (e) {
-            if (isWechatBrowser() && document.getElementById('wechatMask').style.display === 'block') {
-                e.preventDefault();
-            }
-        }, true);
+        }
     </script>
 </body>
 
