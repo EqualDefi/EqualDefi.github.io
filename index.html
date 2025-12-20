@@ -9,7 +9,6 @@
         type="image/x-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@800&display=swap" rel="stylesheet">
-    <!-- 引入 Google 字体与图标 -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,21 +33,52 @@
             line-height: 1.6;
         }
 
+        /* 语言切换器样式 */
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 8px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 6px 12px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: all 0.2s;
+            border-radius: 20px;
+        }
+
+        .lang-btn.active {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
         .container {
             max-width: 1000px;
             margin: 40px auto;
             padding: 20px;
         }
 
-        /* Header 样式 */
         header {
             text-align: center;
             margin-bottom: 50px;
         }
 
         .logo-area img {
-            width: 120Px;
-            /* margin-bottom: 10px; */
+            width: 120px;
             filter: drop-shadow(0 4px 6px rgba(44, 128, 254, 0.2));
         }
 
@@ -62,16 +92,14 @@
             display: inline-block;
             padding: 10px 0;
             line-height: 1.1;
-
+            margin: 10px 0;
         }
 
         header p {
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-top: 10px;
         }
 
-        /* 网格布局 (Bento Grid) */
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -82,6 +110,8 @@
             .bento-grid {
                 grid-template-columns: 1fr;
             }
+            header h1 { font-size: 2.5rem; }
+            .lang-switch { top: 10px; right: 10px; }
         }
 
         .card {
@@ -110,7 +140,6 @@
             margin-bottom: 20px;
         }
 
-        /* 合约地址特殊样式 */
         .address-box {
             background: #f1f5f9;
             border-radius: 12px;
@@ -155,7 +184,6 @@
             color: white;
         }
 
-        /* 列表项样式 */
         .link-item {
             display: flex;
             align-items: center;
@@ -167,37 +195,10 @@
             transition: color 0.2s;
         }
 
-        .link-item:last-child {
-            border-bottom: none;
-        }
+        .link-item:last-child { border-bottom: none; }
+        .link-item:hover { color: var(--primary); }
+        .link-item i { font-size: 0.8rem; opacity: 0.5; }
 
-        .link-item:hover {
-            color: var(--primary);
-        }
-
-        .link-item i {
-            font-size: 0.8rem;
-            opacity: 0.5;
-        }
-
-        .btn-primary {
-            display: block;
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 12px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 10px;
-            transition: opacity 0.2s;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        /* 社交媒体栏 */
         .social-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -216,19 +217,13 @@
             transition: all 0.2s;
         }
 
-        .social-item i {
-            font-size: 1.5rem;
-            display: block;
-            margin-bottom: 5px;
-        }
-
+        .social-item i { font-size: 1.5rem; display: block; margin-bottom: 5px; }
         .social-item:hover {
             background: var(--primary-light);
             color: var(--primary);
             border-color: var(--primary);
         }
 
-        /* 底部信息 */
         footer {
             font-family: 'Space Grotesk', sans-serif;
             text-align: center;
@@ -241,7 +236,11 @@
 </head>
 
 <body>
-    <div class="wechat-mask" id="wechatMask"></div>
+    <!-- 语言切换按钮 -->
+    <div class="lang-switch">
+        <button class="lang-btn" id="btn-zh" onclick="switchLang('zh')">中</button>
+        <button class="lang-btn" id="btn-en" onclick="switchLang('en')">EN</button>
+    </div>
 
     <div class="container">
         <header>
@@ -249,127 +248,121 @@
                 <img src="https://equaldefi.oss-cn-hongkong.aliyuncs.com/img/EqualDefi_logo.png" alt="EqualDefi Logo">
             </div>
             <h1>EqualDefi</h1>
-            <p><i class="fa-solid fa-circle-info"></i> 建议在系统浏览器中打开以获得完整体验</p>
+            <p><i class="fa-solid fa-circle-info"></i> <span data-i18n="browser-tip">建议在系统浏览器中打开以获得完整体验</span></p>
         </header>
 
         <div class="bento-grid">
-            <!-- 常用下载 -->
+            <!-- 常用工具 -->
             <div class="card">
-                <div class="card-title"><i class="fa-solid fa-download"></i> 常用工具</div>
+                <div class="card-title">
+                    <i class="fa-solid fa-download"></i> 
+                    <span data-i18n="tools-title">常用工具</span>
+                </div>
                 <a href="https://aveios.com/download" target="_blank" class="link-item">
-                    <span>Ave.ai 官方下载</span>
+                    <span data-i18n="ave-download">Ave.ai 官方下载</span>
                     <i class="fa-solid fa-chevron-right"></i>
                 </a>
                 <a href="https://www.tp.xyz/" target="_blank" class="link-item">
-                    <span>TokenPocket 官方下载</span>
+                    <span data-i18n="tp-download">TokenPocket 官方下载</span>
                     <i class="fa-solid fa-chevron-right"></i>
                 </a>
                 <div style="margin-top:15px">
-                    <span class="address-label">CSF 卖出清零链接</span>
+                    <span class="address-label" data-i18n="csf-swap-label">CSF 卖出清零链接</span>
                     <div class="address-box">
                         <span class="address-value">https://csf.equaldefi.com</span>
-                        <button class="copy-btn" onclick="copyText('https://csf.equaldefi.com', this)">复制</button>
+                        <button class="copy-btn" data-i18n="copy" onclick="copyText('https://csf.equaldefi.com', this)">复制</button>
                     </div>
                 </div>
             </div>
 
             <!-- 合约地址 -->
             <div class="card">
-                <div class="card-title"><i class="fa-solid fa-file-contract"></i>合约地址</div>
-                <div class="address-box">
-                    <span class="address-label">CF (绑定关系)</span>
-                    <span class="address-value">0x0927CC7cd7852Dd47341cCA6e578bB194d8BF08B</span>
-                    <button class="copy-btn"
-                        onclick="copyText('0x0927CC7cd7852Dd47341cCA6e578bB194d8BF08B', this)">复制</button>
+                <div class="card-title">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <span data-i18n="contract-title">合约地址</span>
                 </div>
                 <div class="address-box">
-                    <span class="address-label">CSF (购买资产)</span>
+                    <span class="address-label" data-i18n="cf-label">CF (绑定关系)</span>
+                    <span class="address-value">0x0927CC7cd7852Dd47341cCA6e578bB194d8BF08B</span>
+                    <button class="copy-btn" data-i18n="copy" onclick="copyText('0x0927CC7cd7852Dd47341cCA6e578bB194d8BF08B', this)">复制</button>
+                </div>
+                <div class="address-box">
+                    <span class="address-label" data-i18n="csf-label">CSF (购买资产)</span>
                     <span class="address-value">0xaF6bD7085836FCd843884aD0c292C09Fe17D72B6</span>
-                    <button class="copy-btn"
-                        onclick="copyText('0xaF6bD7085836FCd843884aD0c292C09Fe17D72B6', this)">复制</button>
+                    <button class="copy-btn" data-i18n="copy" onclick="copyText('0xaF6bD7085836FCd843884aD0c292C09Fe17D72B6', this)">复制</button>
                 </div>
             </div>
 
-            <!-- 视频教程 -->
+            <!-- 操作指南 -->
             <div class="card">
-                <div class="card-title"><i class="fa-solid fa-play-circle"></i> 操作指南</div>
-                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/DeBox_Join.mp4" target="_blank"
-                    class="link-item">
-                    <span>DeBox 使用教程</span>
+                <div class="card-title">
+                    <i class="fa-solid fa-play-circle"></i> 
+                    <span data-i18n="guide-title">操作指南</span>
+                </div>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/DeBox_Join.mp4" target="_blank" class="link-item">
+                    <span data-i18n="v-debox">DeBox 使用教程</span>
                     <i class="fa-solid fa-video"></i>
                 </a>
-                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Create_Wallet.mp4" target="_blank"
-                    class="link-item">
-                    <span>Ave 创建钱包</span>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Create_Wallet.mp4" target="_blank" class="link-item">
+                    <span data-i18n="v-ave-c">Ave 创建钱包</span>
                     <i class="fa-solid fa-video"></i>
                 </a>
-                <!-- <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Adds_Tokens.mp4" target="_blank"
-                    class="link-item">
-                    <span>Ave 添加代币</span>
-                    <i class="fa-solid fa-video"></i>
-                </a> -->
-                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Appointment_Queue.mp4" target="_blank"
-                    class="link-item">
-                    <span>Ave 预约排队</span>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Appointment_Queue.mp4" target="_blank" class="link-item">
+                    <span data-i18n="v-ave-q">Ave 预约排队</span>
                     <i class="fa-solid fa-video"></i>
                 </a>
-                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Purchase.mp4" target="_blank"
-                    class="link-item">
-                    <span>Ave 购买代币</span>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/Ave_Purchase.mp4" target="_blank" class="link-item">
+                    <span data-i18n="v-ave-b">Ave 购买代币</span>
                     <i class="fa-solid fa-video"></i>
                 </a>
-                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Create_Wallet.mp4" target="_blank"
-                    class="link-item">
-                    <span>TP 创建钱包</span>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Create_Wallet.mp4" target="_blank" class="link-item">
+                    <span data-i18n="v-tp-c">TP 创建钱包</span>
                     <i class="fa-solid fa-video"></i>
                 </a>
-                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Appointment_Queue.mp4" target="_blank"
-                    class="link-item">
-                    <span>TP 预约排队</span>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Appointment_Queue.mp4" target="_blank" class="link-item">
+                    <span data-i18n="v-tp-q">TP 预约排队</span>
                     <i class="fa-solid fa-video"></i>
                 </a>
-                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Purchase.mp4" target="_blank"
-                    class="link-item">
-                    <span>TP 购买代币</span>
+                <a href="https://equaldefi.oss-cn-hongkong.aliyuncs.com/video/TP_Purchase.mp4" target="_blank" class="link-item">
+                    <span data-i18n="v-tp-b">TP 购买代币</span>
                     <i class="fa-solid fa-video"></i>
                 </a>
             </div>
 
             <!-- 线上商学院 -->
             <div class="card">
-                <div class="card-title"><i class="fa-solid fa-graduation-cap"></i> 线上商学院</div>
-
-
+                <div class="card-title">
+                    <i class="fa-solid fa-graduation-cap"></i> 
+                    <span data-i18n="academy-title">线上商学院</span>
+                </div>
                 <a href="https://meeting.tencent.com/cw/NQzdXArXc2" target="_blank" class="link-item">
-                    <span>CSF 逆势上涨，把握先机</span>
+                    <span data-i18n="c-1">CSF 逆势上涨，把握先机</span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
                 <a href="https://meeting.tencent.com/cw/KPPdQ76Y30" target="_blank" class="link-item">
-                    <span>CSF 开启 Defi 财富新机遇</span>
+                    <span data-i18n="c-2">CSF 开启 Defi 财富新机遇</span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
                 <a href="https://meeting.tencent.com/cw/ld4qe376ff" target="_blank" class="link-item">
-                    <span>CSF做时间的朋友</span>
+                    <span data-i18n="c-3">CSF做时间的朋友</span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
                 <a href="https://meeting.tencent.com/cw/l64zpwzZ68" target="_blank" class="link-item">
-                    <span>十二字方针助力CSF</span>
+                    <span data-i18n="c-4">十二字方针助力CSF</span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
                 <a href="https://meeting.tencent.com/cw/l59606V5a1" target="_blank" class="link-item">
-                    <span>穿越牛熊，尽在CSF</span>
+                    <span data-i18n="c-5">穿越牛熊，尽在CSF</span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
                 <a href="https://meeting.tencent.com/cw/NxbyVq51f8" target="_blank" class="link-item">
-                    <span>CSF创新底层架构促发展</span>
+                    <span data-i18n="c-6">CSF创新底层架构促发展</span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
                 <a href="https://meeting.tencent.com/cw/2yn1yVdO26" target="_blank" class="link-item">
-                    <span>CSF 机制定乾坤，共识赢未来</span>
+                    <span data-i18n="c-7">CSF机制定乾坤，共识赢未来</span>
                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
-
-                <!-- <a href="#" class="btn-primary" style="margin-top: 20px;">查看全部课程</a> -->
             </div>
         </div>
 
@@ -377,15 +370,15 @@
         <div class="social-grid">
             <a href="mailto:EqualDefi@gmail.com" class="social-item">
                 <i class="fa-solid fa-envelope"></i>
-                <span>邮箱</span>
+                <span data-i18n="s-mail">邮箱</span>
             </a>
             <a href="https://x.com/EqualDefi" target="_blank" class="social-item">
                 <i class="fa-brands fa-twitter"></i>
-                <span>推特</span>
+                <span data-i18n="s-x">推特</span>
             </a>
             <a href="https://t.me/EqualDefi_Chinese" target="_blank" class="social-item">
                 <i class="fa-brands fa-telegram"></i>
-                <span>电报</span>
+                <span data-i18n="s-tg">电报</span>
             </a>
             <a href="https://m.debox.pro/group?id=660vqhfo&code=32wflxk6" target="_blank" class="social-item">
                 <i class="fa-solid fa-users"></i>
@@ -394,25 +387,105 @@
         </div>
 
         <footer>
-            <p>&copy; 2025 EqualDefi. All Rights Reserved.</p>
+            <span data-i18n="footer">&copy; 2025 EqualDefi. All Rights Reserved.</span>
         </footer>
     </div>
 
     <script>
-        // 检测微信
-        function isWechat() {
-            return /MicroMessenger/i.test(navigator.userAgent);
+        // 翻译字典
+        const translations = {
+            zh: {
+                "browser-tip": "建议在系统浏览器中打开以获得完整体验",
+                "tools-title": "常用工具",
+                "ave-download": "Ave.ai 官方下载",
+                "tp-download": "TokenPocket 官方下载",
+                "csf-swap-label": "CSF 卖出清零链接",
+                "copy": "复制",
+                "copied": "已复制",
+                "contract-title": "合约地址",
+                "cf-label": "CF (绑定关系)",
+                "csf-label": "CSF (购买资产)",
+                "guide-title": "操作指南",
+                "v-debox": "DeBox 使用教程",
+                "v-ave-c": "Ave 创建钱包",
+                "v-ave-q": "Ave 预约排队",
+                "v-ave-b": "Ave 购买代币",
+                "v-tp-c": "TP 创建钱包",
+                "v-tp-q": "TP 预约排队",
+                "v-tp-b": "TP 购买代币",
+                "academy-title": "线上商学院",
+                "c-1": "CSF 逆势上涨，把握先机",
+                "c-2": "CSF 开启 Defi 财富新机遇",
+                "c-3": "CSF 做时间的朋友",
+                "c-4": "十二字方针助力CSF",
+                "c-5": "穿越牛熊，尽在CSF",
+                "c-6": "CSF创新底层架构促发展",
+                "c-7": "CSF机制定乾坤，共识赢未来",
+                "s-mail": "邮箱",
+                "s-x": "推特",
+                "s-tg": "电报",
+                "footer": "© 2025 EqualDefi 版权所有"
+
+            },
+            en: {
+                "browser-tip": "Open in system browser for the best experience",
+                "tools-title": "Tools",
+                "ave-download": "Ave.ai Official Download",
+                "tp-download": "TokenPocket Official Download",
+                "csf-swap-label": "CSF Swap Link",
+                "copy": "Copy",
+                "copied": "Copied",
+                "contract-title": "Contract Address",
+                "cf-label": "CF (Referral)",
+                "csf-label": "CSF (Asset)",
+                "guide-title": "User Guides",
+                "v-debox": "DeBox Tutorial",
+                "v-ave-c": "Ave: Create Wallet",
+                "v-ave-q": "Ave: Appointment Queue",
+                "v-ave-b": "Ave: Buy Tokens",
+                "v-tp-c": "TP: Create Wallet",
+                "v-tp-q": "TP: Appointment Queue",
+                "v-tp-b": "TP: Buy Tokens",
+                "academy-title": "Online Academy",
+                "c-1": "CSF: Rising Against the Trend",
+                "c-2": "CSF: New DeFi Opportunities",
+                "c-3": "CSF: Being a Friend of Time",
+                "c-4": "Strategy for CSF Success",
+                "c-5": "Through Bull & Bear with CSF",
+                "c-6": "CSF: Innovative Architecture",
+                "c-7": "CSF: Mechanism & Consensus",
+                "s-mail": "Email",
+                "s-x": "Twitter",
+                "s-tg": "Telegram",
+                "footer": "© 2025 EqualDefi. All Rights Reserved."
+
+            }
+        };
+
+        // 切换语言函数
+        function switchLang(lang) {
+            // 保存选择
+            localStorage.setItem('pref_lang', lang);
+            
+            // 更新文本
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerText = translations[lang][key];
+                }
+            });
+
+            // 更新按钮状态
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
         }
 
-        if (isWechat()) {
-            document.getElementById('wechatMask').style.display = 'block';
-        }
-
-        // 复制功能优化
+        // 复制功能优化（支持多语言状态显示）
         function copyText(text, btn) {
+            const currentLang = localStorage.getItem('pref_lang') || 'zh';
             navigator.clipboard.writeText(text).then(() => {
-                const originalText = btn.innerText;
-                btn.innerText = '已复制';
+                const originalText = translations[currentLang]["copy"];
+                btn.innerText = translations[currentLang]["copied"];
                 btn.style.background = '#22c55e';
                 btn.style.color = 'white';
                 setTimeout(() => {
@@ -422,6 +495,12 @@
                 }, 2000);
             });
         }
+
+        // 初始化语言
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('pref_lang') || 'zh';
+            switchLang(savedLang);
+        });
     </script>
 </body>
 
